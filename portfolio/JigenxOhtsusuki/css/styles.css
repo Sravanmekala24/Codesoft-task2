@@ -1,0 +1,454 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #00aaff;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Hide menu toggle button by default */
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+}
+
+/* Main Navigation */
+header .main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header .main-nav ul li {
+    padding: 15px 20px;
+}
+
+header .main-nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+header .main-nav ul li a:hover {
+    background-color: #00aaff;
+    color: #121212;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start the sidebar off-screen */
+    width: 50%;
+    height: 100%;
+    background-color: #1f1f1f;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth transition for sliding in */
+    z-index: 1000;
+    padding-top: 60px;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0; /* Slide the sidebar into view */
+}
+
+/* Close Button Style */
+.sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+/* Navigation Links */
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #00aaff;
+    color: #121212;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show menu toggle button on mobile screens */
+    }
+
+    header .main-nav {
+        display: none; /* Hide main navigation on mobile screens */
+    }
+
+    .sidebar {
+        width: 60%; /* Sidebar takes up full width on small screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide menu toggle button on large screens */
+    }
+
+    header .main-nav {
+        display: flex; /* Show main navigation on large screens */
+        gap: 20px;
+    }
+}
+
+/* Info Bar Styles */
+#info-bar {
+    position: absolute;
+    height: 3px;
+    background-color: #00aaff;
+    bottom: 0;
+    transition: width 0.3s ease, left 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+/* Hide Info Bar on mobile and tablet screens */
+@media (max-width: 768px) {
+    #info-bar {
+        display: none;
+    }
+}
+
+/* Home Page Styles */
+#home {
+    background: #1f1f1f;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#home .intro h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #00aaff;
+    font-weight: 600;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#home .intro p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    font-weight: 300;
+    animation: slideIn 2s ease-in-out;
+}
+
+#home .cta {
+    background-color: #00aaff;
+    color: #121212;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: bounce 2s infinite;
+}
+
+#home .cta:hover {
+    background-color: #007acc;
+    transform: translateY(-5px);
+}
+
+/* About Section */
+#about {
+    padding: 80px 20px;
+    background-color: #121212;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00aaff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#education {
+    padding: 80px 20px;
+    background-color: #121212;
+    color: #f0f0f0;
+    text-align: left;
+}
+
+#about p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#education h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00aaff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#education p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Skills Section */
+#skills {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+#skills h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00aaff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.skill-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.skill-item {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-size: 1.3em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Projects Section */
+#projects {
+    padding: 80px 20px;
+    background-color: #121212;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+#projects h1 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #00aaff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.project-item {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    background-color: #121212;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #00aaff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 1.1em;
+    text-align: left;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+}
+
+/* Increase size of textarea without affecting other form elements */
+form textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    height: 150px; /* Adjust height as needed */
+    resize: vertical; /* Allows vertical resizing only */
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #00aaff;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #007acc;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    position: static;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    #contact h1 {
+        font-size: 2em;
+    }
+
+    #contact p {
+        font-size: 1em;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}

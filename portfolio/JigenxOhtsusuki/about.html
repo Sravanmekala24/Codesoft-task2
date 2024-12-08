@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | M. Sravan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+    <div class="logo">M. Sravan</div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="resume.html"><i</li></i> Resume</a></li> <!-- Resume Linkc:c:\Users\manikanta\OneDrive\Documents\Sravan Resume.pdf -->
+        </ul>
+    </nav>
+    <div id="menu-toggle" class="menu-toggle">
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+    </div>
+</header>
+
+    <div id="sidebar" class="sidebar">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="reume.html"><i class="fas fa-envelope"></i> Resume</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>I am a 3rd-year B.Tech student specializing in Computer Science Engineering at Malla Reddy College of Engineering (M.R.C.E), Hyderabad. I have a strong interest in software development. And I am proficient in C and Web-Development.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>B.Tech in Computer Science Engineering, Malla Reddy College of Engineering (M.R.C.E)</p>
+        <p>Expected Graduation: 2026</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 M. Sravan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sidebar Toggle Script
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
